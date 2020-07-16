@@ -14,7 +14,11 @@
       "graphql-type-json": "^0.2.1",
       "node-sass": "^4.14.1",
       "p5": "^1.0.0",
+<<<<<<< HEAD
       "realm-web": "0.4.0",
+=======
+      "realm-web": "^0.4.0",
+>>>>>>> 546d460de48da2e471a0eab60522fe5d77220121
       "sass-loader": "^8.0.2",
       "vue": "^2.6.11",
       "vue-apollo": "^3.0.0-beta.11",
