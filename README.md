@@ -1,0 +1,1 @@
+Pagina de delirios usando Heroku+MongoDB+Strapi+GraphQL+VUE+P5
