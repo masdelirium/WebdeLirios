@@ -9,7 +9,7 @@
 			<br/>
 			<br/>
 			
-			<button style="float: right;font-size: 12px;" v-on:click="window.open('https://github.com/xnamahx/ArgollasMutantes', '_blank');">Source Code <v-icon>mdi-github</v-icon></button>
+			<button style="float: right;font-size: 12px;" v-on:click="open('https://github.com/xnamahx/ArgollasMutantes');">Source Code <v-icon>mdi-github</v-icon></button>
 
 			<img class="maxdev-thumbnail" src="https://i.imgur.com/3HVB6im.png" />
 			

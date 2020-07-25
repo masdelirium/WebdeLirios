@@ -7,7 +7,7 @@
 			<br/>
 			<br/>
 			
-			<button style="float: right;font-size: 12px;" v-on:click="window.open('https://github.com/xnamahx/PlanchasDeReverberacion', '_blank');">Source Code <v-icon>mdi-github</v-icon></button>
+			<button style="float: right;font-size: 12px;" v-on:click="open('https://github.com/xnamahx/PlanchasDeReverberacion');">Source Code <v-icon>mdi-github</v-icon></button>
 			<img class="maxdev-thumbnail" src="https://i.imgur.com/aEyTbOB.png" />
 			
 			<br/>

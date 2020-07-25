@@ -35,6 +35,12 @@
               Live Midi Scripts
             </v-btn>
           </router-link>
+          <br/>
+          <router-link class="v-toolbar__title" to="/vcv" >
+            <v-btn v-on:click="$route.path!='/vcv'?$store.commit('loading', true):''">
+              VCV Modules
+            </v-btn>
+          </router-link>
 
         </v-menu>
 
@@ -93,6 +99,8 @@
       <v-spacer></v-spacer>
       <div>
         <span style="color:#303030;background-color: white;">IG : masDelirium</span>
+        <br/>
+        <span style="color:#303030;background-color: white;">FB : masDelirium</span>
         <br/>
         <span style="color:#303030;background-color: white;">contacto.delirios@gmail.com</span>
         <br/>

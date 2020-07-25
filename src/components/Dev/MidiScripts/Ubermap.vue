@@ -3,15 +3,15 @@
 	<v-main style="padding:0">
 		<v-main fill-height fluid style="padding:0">
 			
+			<!--button style="float: right;font-size: 12px;" v-on:click="open('https://github.com/tomduncalf/ubermap');">Source Code <v-icon>mdi-github</v-icon></button-->
 			<img class="img-thumbnail" src="https://i.imgur.com/tMazzg0.jpg" />
 			
-			<a href="https://github.com/tomduncalf/ubermap">https://github.com/tomduncalf/ubermap</a>
 			<br/>
 			<br/>
 			<div style="font-size: 12px;">
 			Resources:
 			<ol>
-				<li><a href="https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc">https://github.com/Ableton/push-interface/blob/master/doc/AbletonPush2MIDIDisplayInterface.asc</a></li>
+				<li><a href="https://github.com/tomduncalf/ubermap">https://github.com/tomduncalf/ubermap</a></li>
 			</ol>
 			</div>
 			
