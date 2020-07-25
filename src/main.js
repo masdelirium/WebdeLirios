@@ -9,6 +9,14 @@ import showdown from './plugins/showdown';
 import loading from './plugins/loadingOverlay';
 import moment from './plugins/moment';
 
+Vue.mixin({
+    methods:{
+        open:function(url){
+            window.open(url, '_blank');
+        }
+    }
+})
+
 new Vue({
     router,
     vuetify,

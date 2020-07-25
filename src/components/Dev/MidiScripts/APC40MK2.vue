@@ -2,9 +2,9 @@
 
 	<v-main style="padding:0">
 		<v-main fill-height fluid style="padding:0">
+			<button style="float: right;font-size: 12px;" v-on:click="open('https://github.com/xnamahx/APC40_MkIIx');">Source Code <v-icon>mdi-github</v-icon></button>
 			<img class="img-thumbnail" src="https://i.imgur.com/HrNMo2r.png" />
 
-			<a href="https://github.com/xnamahx/APC40_MkIIx">https://github.com/xnamahx/APC40_MkIIx</a>
 			<br/>
 			<br/>
 			<div style="font-size: 12px;">

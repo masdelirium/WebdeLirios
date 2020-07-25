@@ -13,10 +13,10 @@ console.log('  ---- Using Apollo ---- ');
 // HTTP connection to the API
 const httpLink = createHttpLink({
   // You should use an absolute URL here
-  uri: process.env.uri,
+  uri: "https://us-east-1.aws.stitch.mongodb.com/api/client/v2.0/app/deliriospage-tatfd/graphql",
 });
 
-const app = new RealmWeb.App({ id: process.env.id });
+const app = new RealmWeb.App({ id: "deliriospage-tatfd" });
 
 // Add an Authorization header with a valid user access token to all GraphQL requests
 const authorizationHeaderLink = setContext(async (_, { headers }) => {
@@ -25,7 +25,7 @@ const authorizationHeaderLink = setContext(async (_, { headers }) => {
     //await app.currentUser.refreshCustomData();
   } else {
     // If no user is logged in, log in an anonymous user
-    await app.logIn(RealmWeb.Credentials.apiKey(process.env.key));
+    await app.logIn(RealmWeb.Credentials.apiKey(process.env.VUE_APP_MONGOKEY));
   }
   // Get a valid access token for the current user
   const { accessToken } = app.currentUser;

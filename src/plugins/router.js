@@ -71,6 +71,19 @@ export default new Router({
 			}]
 		},
 		{
+			path: '/vcv',
+			name: "VCVModules",	
+			component: () => import('@/components/Dev/VCV/index.vue'),
+			children: [
+			{
+				path: '',
+				component: () => import('@/components/Dev/VCV/default.vue') 
+			},{
+				path: 'PushMap',
+				component: () => import('@/components/Dev/VCV/PushMap.vue') 
+			}]
+		},
+		{
 			path: '/music',
 			name: "Music",	
 			component: () => import('@/components/Music/index.vue') 

@@ -37,12 +37,13 @@
 
 
                         <div class="article-brief">
-                            <router-link
+                            <span id="title" class="uk-text-large">{{ onearticle.Title }}</span>
+                            <!--router-link
                                 :to="{ path: '/article/' + onearticle._id }"
                                 class="uk-link-reset"
                             >
                                 <span v-on:click="$store.commit('loading', true)" id="title" class="uk-text-large">{{ onearticle.Title }}</span>
-                            </router-link>
+                            </router-link-->
                             <div class="uk-card uk-card-muted">
                                 <div class="uk-card-body">
                                     <p> {{onearticle.Content.split('\n')[0] }} <p/>

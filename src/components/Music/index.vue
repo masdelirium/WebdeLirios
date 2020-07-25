@@ -75,7 +75,7 @@
                             </div>
 
                             <div class="music-brief">
-                                <span id="title" class="uk-text-large"><a href="https://soundcloud.com/hachodelbruho">HachodelBruho</a></span>
+                                <span id="title" class="uk-text-large"><a target="_blank" href="https://soundcloud.com/hachodelbruho">HachodelBruho</a></span>
                                 <div class="uk-card uk-card-muted">
                                     <div class="uk-card-body">
                                         Experimentacion con sintetizadores hardware y desarrollo software.

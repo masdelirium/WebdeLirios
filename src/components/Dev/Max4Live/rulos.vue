@@ -9,7 +9,7 @@
 			<br/>
 			<br/>
 			
-			<button style="float: right;font-size: 12px;" v-on:click="window.open('https://github.com/xnamahx/RulosMutantes', '_blank');">Source Code <v-icon>mdi-github</v-icon></button>
+			<button style="float: right;font-size: 12px;" v-on:click="open('https://github.com/xnamahx/RulosMutantes');">Source Code <v-icon>mdi-github</v-icon></button>
 
 			<img class="maxdev-thumbnail" src="https://i.imgur.com/HthF8IY.png" />
 			
