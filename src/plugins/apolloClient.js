@@ -13,7 +13,11 @@ console.log('  ---- Using Apollo ---- ');
 // HTTP connection to the API
 const httpLink = createHttpLink({
   // You should use an absolute URL here
+
   uri: "https://us-east-1.aws.realm.mongodb.com/api/client/v2.0/app/deliriospage-tatfd/graphql",
+
+
+
 });
 
 const app = new RealmWeb.App({ id: "deliriospage-tatfd" });
@@ -26,7 +30,11 @@ const authorizationHeaderLink = setContext(async (_, { headers }) => {
   } else {*/
     // If no user is logged in, log in an anonymous user
     await app.logIn(RealmWeb.Credentials.apiKey(process.env.VUE_APP_MONGOKEY));
+
   //}
+
+
+
   // Get a valid access token for the current user
   const { accessToken } = app.currentUser;
 
