@@ -7,72 +7,69 @@
       clipped-left
       clipped-right
       color="white"
+      width="100%"
     >
-      <v-spacer></v-spacer>
-      <router-link class="v-toolbar__title homelink" :style="{'margin-top': '2px','color': $route.path=='/'?'#76767652':'#76767200'}" to="/" >
-          <img v-on:click="$route.path!='/'?$store.commit('loading', true):''" style="width: 80px;margin:0 10px" src="@/assets/delirios-logo.gif"/>
-      </router-link>
-      <div>
+      <div style="display:block;width:70%;margin:0 auto;">
 
-        <v-menu open-on-hover bottom offset-y>
-          <template v-slot:activator="{ on }">
-            <v-btn v-on="on" :style="($route.path=='/vcv' ||$route.path=='/max4live' || $route.path=='/midiScripts')?{'background-color':'#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
-              Dev
-            </v-btn>
-          </template>
+        <router-link class="v-toolbar__title homelink" :style="{'margin-top': '2px','color': $route.path=='/'?'#76767652':'#76767200'}" to="/" >
+            <img v-on:click="$route.path!='/'?$store.commit('loading', true):''" style="width: 80px;margin:0 10px" src="@/assets/delirios-logo.gif"/>
+        </router-link>
+        <div style="float:right;">
 
-          <!--v-btn>
-            <router-link class="v-toolbar__title" to="/td">Touch Designer</router-link>
-          </v-btn>
-          <br/-->
-
-          <router-link class="v-toolbar__title" to="/max4live">
-            <v-btn v-on:click="$route.path!='/max4live'?$store.commit('loading', true):''" :style="($route.path=='/max4live')?{'background-color':'#ffffff','color':'#000000','width':'100%'}:{'background-color':'#272727','color':'#ffffff','width':'100%'}">
-              Max 4 Live
-            </v-btn>
-          </router-link>
-          <br/>
-          <router-link class="v-toolbar__title" to="/midiScripts" >
-            <v-btn v-on:click="$route.path!='/midiScripts'?$store.commit('loading', true):''" 
-            :style="($route.path=='/midiScripts')?{'background-color':'#ffffff','color':'#000000','width':'100%'}:{'background-color':'#272727','color':'#ffffff','width':'100%'}">
-              Live Midi Scripts
-            </v-btn>
-          </router-link>
-          <br/>
-          <router-link class="v-toolbar__title" to="/vcv" >
-            <v-btn v-on:click="$route.path!='/vcv'?$store.commit('loading', true):''" :style="($route.path=='/vcv')?{'background-color':'#ffffff','color':'#000000','width':'100%'}:{'background-color':'#272727','color':'#ffffff','width':'100%'}">
-              VCV Modules
+          <router-link class="v-toolbar__title" to="/music" >
+            <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/music'?$store.commit('loading', true):''" :style="$route.path=='/music'?{'background-color': '#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
+              Music
             </v-btn>
           </router-link>
 
-        </v-menu>
+          <v-menu open-on-hover bottom offset-y>
+            <template v-slot:activator="{ on }">
+              <v-btn v-on="on" :style="($route.path=='/vcv' ||$route.path=='/max4live' || $route.path=='/midiScripts')?{'margin-top':'1px','background-color':'#ffffff','color':'#000000'}:{'margin-top':'1px','background-color':'#272727','color':'#ffffff'}">
+                Dev
+              </v-btn>
+            </template>
 
-        <router-link class="v-toolbar__title" to="/blog">
-          <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/blog'?$store.commit('loading', true):''" :style="$route.path=='/blog'?{'background-color': '#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
-            Blog
-          </v-btn>
-        </router-link>
+            <!--v-btn>
+              <router-link class="v-toolbar__title" to="/td">Touch Designer</router-link>
+            </v-btn>
+            <br/-->
 
-        <router-link class="v-toolbar__title" to="/music" >
-          <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/music'?$store.commit('loading', true):''" :style="$route.path=='/music'?{'background-color': '#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
-            Music
-          </v-btn>
-        </router-link>
+            <router-link class="v-toolbar__title" to="/max4live">
+              <v-btn v-on:click="$route.path!='/max4live'?$store.commit('loading', true):''" :style="($route.path=='/max4live')?{'background-color':'#ffffff','color':'#000000','width':'100%'}:{'background-color':'#272727','color':'#ffffff','width':'100%'}">
+                Max 4 Live
+              </v-btn>
+            </router-link>
+            <br/>
+            <router-link class="v-toolbar__title" to="/midiScripts" >
+              <v-btn v-on:click="$route.path!='/midiScripts'?$store.commit('loading', true):''" 
+              :style="($route.path=='/midiScripts')?{'background-color':'#ffffff','color':'#000000','width':'100%'}:{'background-color':'#272727','color':'#ffffff','width':'100%'}">
+                Live Midi Scripts
+              </v-btn>
+            </router-link>
+            <br/>
+            <router-link class="v-toolbar__title" to="/vcv" >
+              <v-btn v-on:click="$route.path!='/vcv'?$store.commit('loading', true):''" :style="($route.path=='/vcv')?{'background-color':'#ffffff','color':'#000000','width':'100%'}:{'background-color':'#272727','color':'#ffffff','width':'100%'}">
+                VCV Modules
+              </v-btn>
+            </router-link>
 
-        <router-link class="v-toolbar__title" to="/downloads" >
-          <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/downloads'?$store.commit('loading', true):''" :style="$route.path=='/downloads'?{'background-color': '#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
-            Downloads
-          </v-btn>
-        </router-link>
+          </v-menu>
+
+          <router-link class="v-toolbar__title" to="/blog">
+            <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/blog'?$store.commit('loading', true):''" :style="$route.path=='/blog'?{'background-color': '#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
+              Blog
+            </v-btn>
+          </router-link>
+
+          <router-link class="v-toolbar__title" to="/downloads" >
+            <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/downloads'?$store.commit('loading', true):''" :style="$route.path=='/downloads'?{'background-color': '#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
+              Downloads
+            </v-btn>
+          </router-link>
+
+        </div>
 
       </div>
-
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-      <v-spacer></v-spacer>
-
     </v-app-bar>
 
     <v-main>
