@@ -29,6 +29,7 @@
             <v-row align="center" justify="center" style="z-index: 11;">
 
                 <div class="article-main" v-for="onearticle in leftArticles" :key="onearticle._id">
+
                     <div class="uk-child-width-1-2" uk-grid>
                       <div class="article-wrap" @mouseover="hoverArticle = onearticle._id" @mouseleave="hoverArticle = false">
                         <div :class="{ notselected: hoverArticle != onearticle._id, selected: hoverArticle == onearticle._id }" class="article-thumbnail" :style="{ backgroundImage: `url(${onearticle.ImageHeader})` }">
@@ -69,7 +70,7 @@ import gql from "graphql-tag";
 export default {
     name: 'Summary',
     mounted() {
-        console.log('  ---- Summary mounted ---- ');
+        console.log('  ---- Summary mounted ----  ');
     },
     data() {
         return {
@@ -101,11 +102,8 @@ export default {
         },
     },
     computed: {
-        leftArticlesCount() {
-            return Math.ceil(this.articles.length);
-        },
         leftArticles() {
-            return this.articles.slice(0, this.leftArticlesCount);
+            return this.articles.filter(e=> e.Title!='Home');
         },
     },
     methods:{

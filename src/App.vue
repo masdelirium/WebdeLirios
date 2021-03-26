@@ -6,16 +6,17 @@
       app
       clipped-left
       clipped-right
+      color="white"
     >
       <v-spacer></v-spacer>
-      <router-link class="v-toolbar__title homelink" :style="{'margin-top': '2px','background-color': $route.path=='/'?'#76767652':'#76767200'}" to="/" >
-          <img v-on:click="$route.path!='/'?$store.commit('loading', true):''" style="width: 29px;" src="https://i.imgur.com/VZh5jpz.png"/>
+      <router-link class="v-toolbar__title homelink" :style="{'margin-top': '2px','color': $route.path=='/'?'#76767652':'#76767200'}" to="/" >
+          <img v-on:click="$route.path!='/'?$store.commit('loading', true):''" style="width: 80px;margin:0 10px" src="@/assets/delirios-logo.gif"/>
       </router-link>
       <div>
 
         <v-menu open-on-hover bottom offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn v-on="on" :style="{'background-color': $route.path=='/max4live' || $route.path=='/midiScripts' ?'#76767652':'#76760100'}">
+            <v-btn v-on="on" :style="($route.path=='/vcv' ||$route.path=='/max4live' || $route.path=='/midiScripts')?{'background-color':'#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
               Dev
             </v-btn>
           </template>
@@ -24,20 +25,22 @@
             <router-link class="v-toolbar__title" to="/td">Touch Designer</router-link>
           </v-btn>
           <br/-->
-          <router-link class="v-toolbar__title" to="/max4live" >
-            <v-btn v-on:click="$route.path!='/max4live'?$store.commit('loading', true):''">
+
+          <router-link class="v-toolbar__title" to="/max4live">
+            <v-btn v-on:click="$route.path!='/max4live'?$store.commit('loading', true):''" :style="($route.path=='/max4live')?{'background-color':'#ffffff','color':'#000000','width':'100%'}:{'background-color':'#272727','color':'#ffffff','width':'100%'}">
               Max 4 Live
             </v-btn>
           </router-link>
           <br/>
           <router-link class="v-toolbar__title" to="/midiScripts" >
-            <v-btn v-on:click="$route.path!='/midiScripts'?$store.commit('loading', true):''">
+            <v-btn v-on:click="$route.path!='/midiScripts'?$store.commit('loading', true):''" 
+            :style="($route.path=='/midiScripts')?{'background-color':'#ffffff','color':'#000000','width':'100%'}:{'background-color':'#272727','color':'#ffffff','width':'100%'}">
               Live Midi Scripts
             </v-btn>
           </router-link>
           <br/>
           <router-link class="v-toolbar__title" to="/vcv" >
-            <v-btn v-on:click="$route.path!='/vcv'?$store.commit('loading', true):''">
+            <v-btn v-on:click="$route.path!='/vcv'?$store.commit('loading', true):''" :style="($route.path=='/vcv')?{'background-color':'#ffffff','color':'#000000','width':'100%'}:{'background-color':'#272727','color':'#ffffff','width':'100%'}">
               VCV Modules
             </v-btn>
           </router-link>
@@ -45,19 +48,19 @@
         </v-menu>
 
         <router-link class="v-toolbar__title" to="/blog">
-          <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/blog'?$store.commit('loading', true):''" :style="{'background-color': $route.path=='/blog'?'#76767652':'#76760100'}">
+          <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/blog'?$store.commit('loading', true):''" :style="$route.path=='/blog'?{'background-color': '#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
             Blog
           </v-btn>
         </router-link>
 
         <router-link class="v-toolbar__title" to="/music" >
-          <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/music'?$store.commit('loading', true):''" :style="{'background-color': $route.path=='/music'?'#76767652':'#76760100'}">
+          <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/music'?$store.commit('loading', true):''" :style="$route.path=='/music'?{'background-color': '#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
             Music
           </v-btn>
         </router-link>
 
         <router-link class="v-toolbar__title" to="/downloads" >
-          <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/downloads'?$store.commit('loading', true):''" :style="{'background-color': $route.path=='/downloads'?'#76767652':'#76760100'}">
+          <v-btn style="margin:-1px 0 0 0;" v-on:click="$route.path!='/downloads'?$store.commit('loading', true):''" :style="$route.path=='/downloads'?{'background-color': '#ffffff','color':'#000000'}:{'background-color':'#272727','color':'#ffffff'}">
             Downloads
           </v-btn>
         </router-link>
@@ -153,7 +156,7 @@ export default {
   },
   mounted() {
 
-   console.log('  ---- App mounted ---- ');
+   console.log('  ---- App mounted ----  ');
 
    const script = function (p5) {    
     
@@ -291,7 +294,6 @@ header{
   z-index: 1;
 }
 .homelink{
-    border-radius: 48px;
-    padding: 0 4px
+    padding: 0 10px
 }
 </style>

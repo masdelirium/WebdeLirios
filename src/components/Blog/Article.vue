@@ -57,7 +57,7 @@ export default {
         };
     },
     mounted() {
-        console.log('  ---- Article mounted ---- ');
+        console.log('  ---- Article mounted ----  ');
     },
     apollo: {
         article: {
