@@ -8,6 +8,7 @@ import apolloProvider from "./plugins/apolloClient";
 import showdown from './plugins/showdown';
 import loading from './plugins/loadingOverlay';
 import moment from './plugins/moment';
+import codemirror from './plugins/codemirror';
 
 Vue.mixin({
     methods:{
@@ -24,6 +25,7 @@ new Vue({
     showdown,
     moment,
     loading,
+    codemirror,
     store,
     render: h => h(App)
 }).$mount('#app')

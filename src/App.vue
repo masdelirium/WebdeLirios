@@ -90,7 +90,7 @@
     </v-main>
 
 
-    <v-footer app style="background-color: transparent;z-index: 20">
+    <v-footer app style="background-color: transparent;z-index:1">
       <v-spacer></v-spacer>
 
       <v-spacer></v-spacer>
@@ -117,21 +117,6 @@
 
 import Loading from 'vue-loading-overlay';
 
-import P5 from 'p5';
-
-let xspacing = 8; // Distance between each horizontal location
-let w; // Width of entire wave
-let maxwaves = 4; // total # of waves to add together
-
-let theta = 0.0;
-let amplitude = new Array(maxwaves); // Height of wave
-// Value for incrementing X, to be calculated
-// as a function of period and xspacing
-let dx = new Array(maxwaves);
-// Using an array to store height values
-// for the wave (not entirely necessary)
-let yvalues;
-
 export default {
   name: 'App',
   props: {
@@ -155,100 +140,6 @@ export default {
 
    console.log('  ---- App mounted ----  ');
 
-   const script = function (p5) {    
-    
-    // NOTE: Set up is here   
-    p5.setup = _ => {  
-      p5.frameRate(30);
-      p5.createCanvas(p5.windowWidth, p5.windowHeight );
-      p5.colorMode(p5.RGB, 255, 255, 255, 100);
-      p5.setupWave();
-
-      return _;  
-    }     
-    // NOTE: Draw is here
-    p5.draw = _ => {      
-     p5.background('#272727');
-
-     p5.calcWave();
-     p5.renderWave();
-     
-     return _;  
-    }
-
-    p5.windowResized = _ => { 
-      p5.resizeCanvas(p5.windowWidth, p5.windowHeight );
-      p5.setupWave();
-
-      return _;
-    } 
-
-    p5.calcWave = _ => {
-      // Increment theta (try different values
-      // for 'angular velocity' here
-      theta += 0.02;
-
-      // Set all height values to zero
-      for (let i = 0; i < yvalues.length; i++) {
-        yvalues[i] = 0;
-      }
-
-      // Accumulate wave height values
-      for (let j = 0; j < maxwaves; j++) {
-        let x = theta;
-        for (let i = 0; i < yvalues.length; i++) {
-          // Every other wave is cosine instead of sine
-          if (j % 2 == 0) yvalues[i] += p5.sin(x) * amplitude[j];
-          else yvalues[i] += p5.cos(x) * amplitude[j];
-          x += dx[j];
-        }
-      }
-      return _;
-    }
-
-    p5.setupWave = _ => {
-      w = p5.width + 16;
-
-      for (let i = 0; i < maxwaves; i++) {
-        amplitude[i] = p5.random(10, 30);
-        let period = p5.random(0, 100); // Num pixels before wave repeats
-        dx[i] = (p5.TWO_PI / period) * xspacing;
-      }
-
-      yvalues = new Array(p5.floor(w / xspacing));
-      return _;
-    }
-
-    p5.renderWave = _ => {
-      // A simple way to draw the wave with an ellipse at each location
-      p5.noStroke();
-
-      p5.ellipseMode(p5.CENTER);
-      for (let x = 0; x < yvalues.length; x++) {
-        p5.fill('#101010');
-        p5.ellipse(x * xspacing, p5.width / 2 + yvalues[x], 4, 4);
-        p5.fill('#202020');
-        p5.ellipse(x * xspacing, p5.width / 2 + yvalues[x] - 150, 3.5, 3.5);
-        p5.fill('#303030');
-        p5.ellipse(x * xspacing, p5.width / 2 + yvalues[x] - 300, 3, 3);
-        p5.fill('#404040');
-        p5.ellipse(x * xspacing, p5.width / 2 + yvalues[x] - 450, 2.5, 2.5);
-        p5.fill('#505050');
-        p5.ellipse(x * xspacing, p5.width / 2 + yvalues[x] - 600, 2, 2);
-        p5.fill('#707070');
-        p5.ellipse(x * xspacing, p5.width / 2 + yvalues[x] - 750, 1.5, 1.5);
-        p5.fill('#808080');
-        p5.ellipse(x * xspacing, p5.width / 2 + yvalues[x] - 900, 1, 1);
-        p5.fill('#909090');
-        p5.ellipse(x * xspacing, p5.width / 2 + yvalues[x] - 1050, 0.5, 0.5);
-      }
-      return _;
-    }
-
-   }
-
-   // NOTE: Use p5 as an instance mode
-   new P5(script)
 
   },
   computed:{
@@ -275,6 +166,13 @@ header{
   z-index: 30 !important;
   background-color: transparent !important;
   box-shadow: none !important;
+}
+.v-application--wrap{
+  max-height:fit-content;
+  overflow-y:scroll;
+}
+.uk-card-body{
+  max-height: 600px;
 }
 .v-toolbar__title{
   text-decoration: none;

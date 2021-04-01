@@ -38,13 +38,13 @@
 
 
                         <div class="article-brief">
-                            <span id="title" class="uk-text-large">{{ onearticle.Title }}</span>
-                            <!--router-link
+                            <!--span id="title" class="uk-text-large">{{ onearticle.Title }}</span-->
+                            <router-link
                                 :to="{ path: '/article/' + onearticle._id }"
                                 class="uk-link-reset"
                             >
                                 <span v-on:click="$store.commit('loading', true)" id="title" class="uk-text-large">{{ onearticle.Title }}</span>
-                            </router-link-->
+                            </router-link>
                             <div class="uk-card uk-card-muted">
                                 <div class="uk-card-body">
                                     <p> {{onearticle.Content.split('\n')[0] }} <p/>
@@ -134,14 +134,20 @@ export default {
     .article-brief a{
         color:white;
         font-size: x-large;
+        background-color: rgb(129 164 204);
     }
+
+    .article-brief .uk-card{
+        background-color: rgb(129 164 204);
+    }
+
 
     .article-date{
         width: 90px;
         left: 0;
         bottom: 0;
         margin-bottom: 65px;
-        background-color: gray;
+        background-color: rgb(129 164 204);
     }
     .selected{
         transition: 0.5s;
